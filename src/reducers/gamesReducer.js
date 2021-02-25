@@ -13,4 +13,6 @@ const gamesReducer = (state = initState, action) => {
   }
 };
 
+//Action
+
 export default gamesReducer;

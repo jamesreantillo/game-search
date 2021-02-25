@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+//Compose is to combine two arg into 1
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)));

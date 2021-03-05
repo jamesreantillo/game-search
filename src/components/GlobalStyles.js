@@ -46,6 +46,9 @@ const GlobalStyles = createGlobalStyle`
     img {
       display: block;
     }
+    /* #h3Platforms {
+      margin-bottom: .5rem;
+    } */
     
 `;
 

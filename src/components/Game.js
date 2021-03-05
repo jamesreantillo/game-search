@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 import { smallImage } from '../util';
 
 const Game = ({ name, released, image, id }) => {
-  const stringPathId = id.toString();
   //Load Detail
   const dispatch = useDispatch();
 
@@ -19,15 +18,11 @@ const Game = ({ name, released, image, id }) => {
   };
 
   return (
-    <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}>
+    <StyledGame onClick={loadDetailHandler}>
       <Link to={`/game/${id}`}>
-        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
+        <motion.h3>{name}</motion.h3>
         <p>{released}</p>
-        <motion.img
-          layoutId={`image ${stringPathId}`}
-          src={smallImage(image, 640)}
-          alt={name}
-        />
+        <motion.img src={smallImage(image, 640)} alt={name} />
       </Link>
     </StyledGame>
   );

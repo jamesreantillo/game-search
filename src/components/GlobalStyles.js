@@ -49,6 +49,11 @@ const GlobalStyles = createGlobalStyle`
     /* #h3Platforms {
       margin-bottom: .5rem;
     } */
+
+    input {
+     
+    font-family: 'Monserrat', sans-serif;
+    }
     
 `;
 

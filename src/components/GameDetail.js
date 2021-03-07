@@ -2,6 +2,7 @@ import React from 'react';
 //Styling and Animation
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { popup } from '../animation';
 //Redux
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -64,7 +65,7 @@ const GameDetail = ({ pathId }) => {
     <>
       {!isLoading && (
         <CardShadow className='shadow' onClick={exitDetailHandler}>
-          <Detail>
+          <Detail variants={popup} initial='hidden' animate='show'>
             <Stats>
               <div className='rating'>
                 <motion.h3>{game.name}</motion.h3>

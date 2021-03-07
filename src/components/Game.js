@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { loadDetail } from '../actions/detailAction';
 import { Link } from 'react-router-dom';
 import { smallImage } from '../util';
+import { popup } from '../animation';
 
 const Game = ({ name, released, image, id }) => {
   //Load Detail
@@ -18,11 +19,16 @@ const Game = ({ name, released, image, id }) => {
   };
 
   return (
-    <StyledGame onClick={loadDetailHandler}>
+    <StyledGame
+      variants={popup}
+      initial='hidden'
+      animate='show'
+      onClick={loadDetailHandler}
+    >
       <Link to={`/game/${id}`}>
-        <motion.h3>{name}</motion.h3>
+        <h3>{name}</h3>
         <p>{released}</p>
-        <motion.img src={smallImage(image, 640)} alt={name} />
+        <img src={smallImage(image, 640)} alt={name} />
       </Link>
     </StyledGame>
   );
